@@ -9,16 +9,9 @@ module Mux3to1 #(
     output signed [size-1:0] out    // Output
 );
     // TODO: implement your 3to1 multiplexer here
-    reg signed [size-1:0] Out;
-    assign out = Out;
-    always @(*) begin
-        case(sel)
-            2'b00: Out = s0;
-            2'b01: Out = s1;
-            2'b10: Out = s2;
-            default: Out = 0;
-        endcase
-    end
+        assign out = (sel == 2'b00) ? s0 :
+                 (sel == 2'b01) ? s1 :
+                 (sel == 2'b10) ? s2 : 0; // ✅ ใช้ assign แทน always
     
 endmodule
 
