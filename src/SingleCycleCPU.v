@@ -35,8 +35,8 @@ InstructionMemory m_InstMem(
 );
 
 wire MemRead;
-wire MemToReg;
-wire ALUOp;
+wire [1:0] MemToReg;
+wire [2:0] ALUOp;
 wire MemWrite;
 wire PCSel;
 wire ALUSrc1;
